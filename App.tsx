@@ -1,50 +1,22 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { getTodos, setTodos } from './localStorage/local'
-import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView, SafeAreaView, Platform } from 'react-native';
-import { Input } from "react-native-elements/dist/input/Input"
-import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import Todos from './component/Todos'
-export default function App() {
+import InputCom from './component/InputCom';
+export default function App(): JSX.Element {
   const [input, setInput] = useState<string>('')
-  const [todo, setTodo] = useState<any>([])
-  const addTodo: () => void = () => {
-    if (!input) {
-      alert('Please enter something')
-    }
-    else {
-      setTodo([...todo, input])
-      setInput('')
-    }
-  }
-  useEffect(() => {
-    setTodos(todo)
-  }, [todo])
+  const [todo, setTodo] = useState<string[]>([])
+  const addTodo: () => void = () => { !input ? alert('Please Enter Something') : setTodo([...todo, input]), setInput('') }
+  const delTodo: (id: number) => void = id => setTodo(todo => todo.filter((e, i) => i !== id))
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ScrollView>
         <SafeAreaView style={styles.droidSafeArea}>
-          {
-            todo.map((todo: string, id: number) => { return <Todos todo={todo} key={id} /> })
-          }
+          {todo.map((todo: string, id: number) => <Todos delTodo={delTodo} todo={todo} key={id} id={id} />)}
         </SafeAreaView>
       </ScrollView>
-      <View>
-        <Input defaultValue={input} onChangeText={text => setInput(text)} containerStyle={{ width: 400 }}
-          inputStyle={{ paddingLeft: 5 }}
-          label="Add Todo Task"
-          rightIcon={
-            <Icon
-              name="plus"
-              size={40}
-              style={{ color: "grey" }}
-              onPress={addTodo}
-            />
-          }
-          placeholder="Enter Task"
-        />
-      </View>
+      <InputCom input={input} setInput={setInput} addTodo={addTodo} />
     </View>
   );
 }

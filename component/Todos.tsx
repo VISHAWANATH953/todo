@@ -1,24 +1,26 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Icon } from 'react-native-elements/dist/icons/Icon'
+import { Icon } from "react-native-elements";
 
 interface todoss {
     todo: string,
     key: number,
+    id: number,
+    delTodo: any,
 }
-
-const Todos: React.FC<todoss> = ({ todo }) => {
+const Todos: React.FC<todoss> = ({ todo, delTodo, id }): JSX.Element => {
     return (
         <View style={styles.container}>
             <View style={styles.todos}>
                 <Text style={{ fontSize: 18 }}>{todo}</Text>
                 <Icon
                     color="#0CC"
-                    containerStyle={{}}
                     name="delete"
-                    size={40}
+                    onPress={() => delTodo(id)}
+                    size={35}
                     type="material"
                 />
+
             </View>
         </View>
     )
