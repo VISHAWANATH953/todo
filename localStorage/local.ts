@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const getTodos: () => void = async () => {
     try {
         let getodos = await AsyncStorage.getItem('todo')
-        return getodos != null ? JSON.parse(getodos) : null;
+        getodos != null ? JSON.parse(getodos) : null
     } catch (e) {
         alert(e)
     }
