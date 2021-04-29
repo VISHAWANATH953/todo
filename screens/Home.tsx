@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     droidSafeArea: {
-        paddingTop: Platform.OS === 'android' ? 10 : 0
+        paddingTop: Platform.OS === 'android' ? 5 : 6
     },
 });
 export default Home;

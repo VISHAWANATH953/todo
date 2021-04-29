@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Icon } from "react-native-elements";
+import { Icon } from 'react-native-elements';
 
 interface todoss {
     todo: string,
@@ -14,11 +14,11 @@ const Todos: React.FC<todoss> = ({ todo, delTodo, id }): JSX.Element => {
             <View style={styles.todos}>
                 <Text style={{ fontSize: 18 }}>{todo}</Text>
                 <Icon
-                    color="#fff"
-                    name="delete"
+                    color='#fff'
+                    name='delete'
                     onPress={() => delTodo(id)}
                     size={35}
-                    type="material"
+                    type='material'
                 />
 
             </View>
@@ -28,23 +28,25 @@ const Todos: React.FC<todoss> = ({ todo, delTodo, id }): JSX.Element => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: "row",
+        flexDirection: 'row',
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'flex-end',
         width: '100%',
-        paddingRight: 25,
         marginBottom: 10,
     }, todos: {
-        flexDirection: "row",
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: "space-between",
-        backgroundColor: "grey",
+        justifyContent: 'space-between',
+        backgroundColor: '#3BB9FF',
         borderRadius: 25,
         paddingLeft: 25,
         paddingRight: 10,
         padding: 10,
-        width: "auto",
+        width: 'auto',
+        maxWidth: 400,
+        height: 'auto',
+        flexWrap: 'wrap'
     }
 });
 
