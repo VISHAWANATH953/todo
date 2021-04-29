@@ -14,7 +14,7 @@ const Todos: React.FC<todoss> = ({ todo, delTodo, id }): JSX.Element => {
             <View style={styles.todos}>
                 <Text style={{ fontSize: 18 }}>{todo}</Text>
                 <Icon
-                    color="#0CC"
+                    color="#fff"
                     name="delete"
                     onPress={() => delTodo(id)}
                     size={35}
