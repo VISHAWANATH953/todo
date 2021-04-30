@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from 'react-native-elements';
-
 interface todoss {
     todo: string,
     key: number,
@@ -49,6 +48,5 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap'
     }
 });
-
 export default Todos
 

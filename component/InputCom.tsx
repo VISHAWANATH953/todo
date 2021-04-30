@@ -7,7 +7,6 @@ interface inputcom {
     input: string,
     setInput: Dispatch<SetStateAction<string>>,
 }
-
 const InputCom: React.FC<inputcom> = ({ addTodo, input, setInput }): JSX.Element => {
     return (
         <View>
@@ -27,5 +26,4 @@ const InputCom: React.FC<inputcom> = ({ addTodo, input, setInput }): JSX.Element
         </View>
     )
 }
-
 export default InputCom
