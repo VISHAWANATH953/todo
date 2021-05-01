@@ -16,7 +16,7 @@ const Home: React.FC<home> = ({ navigation }) => {
         <View style={styles.container}>
             <HeaderCom navigation={navigation} title="HOME" />
             <ScrollView>
-                <SafeAreaView>
+                <SafeAreaView style={{marginTop:10,marginRight:15}}>
                     {todo.map((todo: string, id: number) => <Todos delTodo={delTodo} todo={todo} key={id} id={id} />)}
                 </SafeAreaView>
             </ScrollView>

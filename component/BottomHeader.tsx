@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     icon: {
         flex:1,
         height:'100%',
-        borderWidth: 1,
+        borderWidth: .5,
         borderColor: '#3BB9FF',
         justifyContent: 'center'
     }
