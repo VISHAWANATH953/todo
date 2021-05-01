@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import React, { useCallback } from 'react'
+import { View, StyleSheet, Text, Linking } from 'react-native'
 import { SocialIcon, Avatar } from "react-native-elements";
 import HeaderCom from '../component/Header';
 import BottomHeader from '../component/BottomHeader';
@@ -23,37 +23,34 @@ const Social: React.FC<social> = ({ navigation }) => {
                         }}
                     />
                     <Text style={styles.text}>Hi,I Am Vish</Text>
-                    <Text style={styles.txts}>Vishkokre@gmail.com</Text>
+                    <Text style={styles.txts} onPress={() => Linking.openURL('mailto://vishkokre@gmail.com')}>Vishkokre@gmail.com</Text>
                 </View>
                 <View style={styles.icon}>
                     <SocialIcon
                         iconSize={40}
                         iconType="font-awesome"
                         loading={false}
-                        onPress={() => console.log("onPress()")}
+                        onPress={() => Linking.openURL('https://github.com/VISHAWANATH953')}
                         style={{ paddingHorizontal: 10 }}
-                        title="GitHub"
                         type="github"
                     /><SocialIcon
                         iconSize={35}
                         iconType="font-awesome"
-                        onPress={() => console.log("onPress()")}
+                        onPress={() => Linking.openURL('https://www.facebook.com/kokarevish')}
                         style={{ paddingHorizontal: 10 }}
                         title="GitHub"
                         type="instagram"
                     /><SocialIcon
                         iconSize={25}
                         iconType="font-awesome"
-                        onPress={() => console.log("onPress()")}
+                        onPress={() => Linking.openURL('https://www.instagram.com/vishawanath_kokare/')}
                         style={{ paddingHorizontal: 10 }}
-                        title="GitHub"
                         type="facebook"
                     /><SocialIcon
                         iconSize={25}
                         iconType="font-awesome"
-                        onPress={() => console.log("onPress()")}
+                        onPress={() => Linking.openURL('https://twitter.com/VishawanathKok5')}
                         style={{ paddingHorizontal: 10 }}
-                        title="GitHub"
                         type="twitter"
                     />
                 </View>
@@ -67,7 +64,7 @@ export default Social
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent:'space-between'
+        justifyContent: 'space-between'
     },
     main: {
         justifyContent: 'space-evenly',
@@ -84,15 +81,15 @@ const styles = StyleSheet.create({
     txts: {
         fontSize: 30,
         marginTop: 20,
-        marginBottom:10,
+        marginBottom: 10,
         color: "#3BB9FF"
     },
     ava: {
         alignItems: 'center',
     },
     bottom: {
-        position:'absolute',
-        bottom:1,
-        left:1,
+        position: 'absolute',
+        bottom: 1,
+        left: 1,
     }
 })
