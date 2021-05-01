@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction } from 'react'
-import { View, Platform } from 'react-native'
 import { Input } from "react-native-elements/dist/input/Input"
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 interface inputcom {
@@ -9,8 +8,7 @@ interface inputcom {
 }
 const InputCom: React.FC<inputcom> = ({ addTodo, input, setInput }): JSX.Element => {
     return (
-        <View>
-            <Input defaultValue={input} onChangeText={text => setInput(text)} containerStyle={{ width: Platform.OS === 'android' ? 360 : "80%" }}
+            <Input defaultValue={input} onChangeText={text => setInput(text)} containerStyle={{ width:  "95%" }}
                 inputStyle={{ paddingLeft: 5 }}
                 label="Add Todo Task"
                 rightIcon={
@@ -23,7 +21,6 @@ const InputCom: React.FC<inputcom> = ({ addTodo, input, setInput }): JSX.Element
                 }
                 placeholder="Enter Task"
             />
-        </View>
     )
 }
 export default InputCom
